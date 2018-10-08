@@ -1,0 +1,144 @@
+<html>
+<head>
+	<link rel="icon" type="image/x-icon" href="resources/icons/favicon.ico">
+	<link href="resources/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+	<link href="resources/css/bootstrap/bootstrap-theme.min.css" rel="stylesheet">
+	<style>
+		.breadcrumb > li + li:before {
+			content: "> ";
+		}
+	</style>
+</head>
+<body>
+	<script src="resources/js/jquery/jquery-1.11.3.min.js"></script>
+	<script src="resources/js/bootstrap/bootstrap.min.js"></script>
+	<script src="resources/js/assets/assets.js"></script>
+	<script>
+		$().ready(function(){
+				var classParam = getUrlParam("class");
+				var drugList = getDrugsList(classParam);
+				var drugListElem = $("#drugList");
+				if(classParam&&drugList&&drugListElem)
+				{
+					var elems ="";
+					for(var drugname in drugList)
+					{
+						var drugDetail = getDrugsDetail(classParam,drugname);
+						//规格型号
+						var spec = drugDetail['spec'];
+						if(!spec)
+						{
+							spec="暂无";
+						}
+						//适应症
+						var indication = drugDetail['indication'];
+						if(!indication)
+						{
+							indication="暂无";
+						}
+						//生产厂家
+						var manufacturers = drugDetail['manufacturers'];
+						var manufacturer ;
+						if(manufacturers)
+						{
+							var idx = Math.floor(Math.random()*manufacturers.length);
+							manufacturer = manufacturers[idx];
+						}
+						var usage=drugDetail['usage'];
+						if(!usage)
+						{
+							usage="暂无";
+						}
+						image = drugDetail['image'];
+						if(!image)
+						{
+							image = "default.jpg";
+						}
+						var elem = '<div class="media">'+
+							 '<a href="details.html?class='+classParam+'&drugname='+drugname+'&manufacturer='+manufacturer+'" class="pull-left"><img src="resources/images/'+image+'" height="200" width="200" class="media-object" alt="" /></a>'+
+							'<div class="media-body">'+
+								'<div class="col-md-12">'+
+									'<h4 class="media-heading col-md-6">'+drugname+'</h4>'+ 
+									'<span class="col-md-6">规格:'+spec+'</span>'+
+								'</div>'+
+								'<div class="col-md-12">'+
+								'<p>适应症:'+indication+'</p>'+
+								'<p>用法用量:'+usage+'</p>'+
+								'<p>生产厂家:'+manufacturer+'</p>'+
+								'</div>'+
+							'</div>'+
+						'</div>';
+						elems=elems+elem;
+					}
+					drugListElem.html(elems);
+				}
+			}
+		)
+	</script>
+	<div class="container">
+		<div class="row clearfix">
+			<div class="col-md-2 column">
+				<img alt="140x140" src="resources/images/home.jpg" />
+			</div>
+			<div class="col-md-2 column">
+				<div class="btn-group">
+					 <button class="btn btn-default" type="button">登录</button> 
+					 <button class="btn btn-default" type="button">注册</button> 
+				</div>
+			</div>
+			<div class="col-md-4 column">
+				 <button type="button" class="btn btn-default">按钮</button>
+			</div>
+			<div class="col-md-4 column">
+				<div class="btn-group">
+					 <button class="btn btn-default" type="button">我的中心</button> 
+					 <button class="btn btn-default" type="button">我的服务</button> 
+					 <button class="btn btn-default" type="button">我的医生</button> 
+					 <button class="btn btn-default" type="button">手机版</button> 
+				</div>
+			</div>
+		</div>
+		<div class="row clearfix">
+			<div class="col-md-12 column">
+				首页&nbsp;-&nbsp;找好大夫&nbsp;按疾病找&nbsp;按医院找&nbsp;按专科找&nbsp;-&nbsp;咨询专家&nbsp;网上资讯&nbsp;电话资讯&nbsp;-&nbsp;免费转诊&nbsp;-&nbsp;海外就诊&nbsp;-&nbsp;品牌汇&nbsp;-&nbsp;快速找药
+			</div>
+		</div>
+		<div class="row clearfix">
+			<div class="col-md-12 column">
+				
+				<ul class="breadcrumb ">
+					
+						当前位置：
+					<li>
+						 <a href="#">好大夫在线</a>
+					</li>
+					<li>
+						 <a href="#">快速找药</a>
+					</li>
+					<li >
+						<a href="#">高血压类用药</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="row clearfix">
+			<div class="col-md-12 column">
+				<h2>
+					什么是高血压类药
+				</h2>
+				<hr style="height:1px;border:none;border-top:1px solid ;" />
+				<p>
+					高血压是最常见的慢性病，也是心脑血管病最主要的危险因素，脑卒中、心肌梗死、心力衰竭及慢性肾脏病是其主要并发症。高血压的危害性与患者的血压水平相关外，还取决与同时存在的其他的心血管病危险因素、靶器官损伤等
+				</p>
+				
+			</div>
+		</div>
+		<div class="row clearfix">
+			<div class="col-md-8 column" id="drugList">
+				
+			</div>
+			<div class="col-md-4 column">
+			</div>
+		</div>
+	</div>
+</body>
