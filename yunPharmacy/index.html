@@ -3,43 +3,40 @@
 	<link rel="icon" type="image/x-icon" href="resources/icons/favicon.ico">
 	<link href="resources/css/bootstrap/bootstrap.min.css" rel="stylesheet">
 	<link href="resources/css/bootstrap/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="resources/css/assets/assets.css" rel="stylesheet">
+	<link href="resources/css/assets/assets.css" rel="stylesheet">
 </head>
 <body>
 	<script src="resources/js/jquery/jquery-1.11.3.min.js"></script>
 	<script src="resources/js/bootstrap/bootstrap.min.js"></script>
+	<script src="resources/js/assets/assets.js"></script>
 	<div class="container">
 		<div class="row clearfix">
 			<div class="col-md-12 column">
-				<div class="col-md-12">
-					<div class="input-group">
-						<input type="text" class="form-control">
-						<span class="input-group-btn">
-							<button class="btn btn-default glyphicon glyphicon-search" type="button">
-							</button>
-						</span>
-					</div><!-- /input-group -->
-				</div><!-- /.col-lg-6 -->
+				<div class="col-md-6 column" style="padding-top:46px">
+					<img alt="140x140" width="50%" src="resources/images/bigLogo.png" />
+				</div>
+				<div class="col-md-6 column" align="right">
+					<div class="btn-group" style="padding-top:44px">
+					 <button id="yunyaofang" class="btn btn-link" type="button">云药房</button> 
+					 <button id="feichufang" class="btn btn-link" type="button" onclick="clickHeadButton('class2')">非处方药</button> 
+					 <button id="baojianpin" class="btn btn-link" type="button" onclick="clickHeadButton('class3')">保健品</button> 
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="row clearfix">
 			<div class="col-md-12 column">
-				<div class="carousel slide" id="carousel-738097">
-					<ol class="carousel-indicators">
-						<li class="active" data-slide-to="0" data-target="#carousel-738097">
-						</li>
-						<li data-slide-to="1" data-target="#carousel-738097">
-						</li>
-						<li data-slide-to="2" data-target="#carousel-738097">
-						</li>
-					</ol>
+				<div class="carousel slide" id="carousel-738097" align="center">
 					<div class="carousel-inner">
 						<div class="item active">
-							<img alt="" src="resources/images/default1.jpg" />
+							<img alt="" width="100%" src="resources/images/banner.jpg" />
 						</div>
 					</div> 
 				</div>
 			</div>
 		</div>
+		<!--
 		<div class="row clearfix">
 			<div class="col-md-12 column" >
 				<h2>
@@ -50,6 +47,8 @@
 				</p>
 			</div>
 		</div>
+		-->
+		<!--
 		<div class="row clearfix">
 			<div class="col-md-12 column">
 				<div class="panel panel-default">
@@ -111,15 +110,16 @@
 				</div>
 			</div>
 		</div>
-		<div class="row clearfix">
+		-->
+		<div class="row clearfix" style="padding-top:20px">
 			<div class="col-md-12 column">
 				<div class="panel panel-default">
 					<div class="panel-heading" style="height:39px">
 						<h3 class="panel-title">
 							<span class="col-md-10">
-								非方药
+								非处方药
 							</span>
-							<a class="btn col-md-2" href="classification.html?class=class2" >更多</a>
+							<a class="btn col-md-2" href="classification.html?class=class2" >查看更多</a>
 						</h3>
 					</div>
 					<div class="panel-body">
@@ -180,7 +180,7 @@
 							<span class="col-md-10">
 								保健品
 							</span>
-							<a class="btn col-md-2" href="classification.html?class=class3" >更多</a>
+							<a class="btn col-md-2" href="classification.html?class=class3" >查看更多</a>
 						</h3>
 					</div>
 					<div class="panel-body">
@@ -234,35 +234,13 @@
 			</div>
 		</div>
 		<div class="row clearfix">
-			<div class="col-md-12 column">
-				<div class="tabbable" id="tabs-207784">
-					<div class="tab-content">
-						<div class="tab-pane" id="panel-305739">
-							<p>
-							</p>
-						</div>
-						<div class="tab-pane active" id="panel-153840">
-							<p>
-							</p>
-						</div>
-						<div class="tab-pane active" id="panel-153841">
-							<p>
-							</p>
-						</div>
-					</div>
-					<ul class="nav nav-tabs">
-						<li class="col-md-4"  align="center">
-							 <a href="#panel-305739" data-toggle="tab">快捷家医</a>
-						</li >
-						<li class="active col-md-4"  align="center"> 
-							 <a href="#panel-153840" data-toggle="tab">云药房</a>
-						</li>
-						<li class="col-md-4 " align="center">
-							 <a href="#panel-153841" data-toggle="tab">我的</a>
-						</li>
-					</ul>
-					
-				</div>
+			<div class="col-md-12 column" style="padding-top:20px;">
+				<img width="100%" alt="140x140" src="resources/images/split.png" />
+			</div>
+		</div>
+		<div class="row clearfix">
+			<div class="col-md-12 column" style="padding-top:20px;padding-bottom:60px" align="center">
+				© 2007 - 2018 东软熙康健康科技有限公司    |   京ICP证151058号
 			</div>
 		</div>
 	</div>
