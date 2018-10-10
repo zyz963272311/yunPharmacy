@@ -3,9 +3,9 @@ var classifications={"class1":"处方药","class2":"非方药","class3":"保健�
 //类别详情
 var	classificationList=
 	{
-	"处方药":{
-		"名称1":{"spec":"规格","indication":"适应症","usage":"用法用量","manufacturers":["生产厂家1","生产厂家2"],"dosage":"剂型","image":"处方药1.jpg","treatment":"参与治疗","label":["标签1","标签2"],"diseases":["相关疾病1","相关疾病2"]},
-		"名称2":{"spec":"规格","indication":"适应症","usage":"用法用量","manufacturers":["生产厂家1","生产厂家2"],"dosage":"剂型","image":"处方药2.jpg","treatment":"参与治疗","label":["标签1","标签2"],"diseases":["相关疾病1","相关疾病2"]}
+	"非方药":{
+		"名称1":{"spec":"规格","indication":"适应症","usage":"用法用量","manufacturers":["生产厂家1","生产厂家2"],"dosage":"剂型","image":"非方药1.jpg","treatment":"参与治疗","label":["标签1","标签2"],"diseases":["相关疾病1","相关疾病2"]},
+		"名称2":{"spec":"规格","indication":"适应症","usage":"用法用量","manufacturers":["生产厂家1","生产厂家2"],"dosage":"剂型","image":"非方药2.jpg","treatment":"参与治疗","label":["标签1","标签2"],"diseases":["相关疾病1","相关疾病2"]}
 		}
 	};
 //相关疾病列表
@@ -115,7 +115,7 @@ function getUrlParam(name) {
     //匹配目标参数
     var r = window.location.search.substr(1).match(reg);
     //返回参数值
-    if (r != null) return unescape(r[2]);
+    if (r != null) return decodeURI(r[2]);
     //不存在时返回null
     return null; 
 }
@@ -164,4 +164,23 @@ function aClick(param)
 	}
 	var params={"page":page};
 	window.location.href = reBuildUrl(params);
+}
+$().ready(function(){
+	$("#yunyaofang").click(function(){
+		window.location.href="index.html";
+	});
+})
+function setRowStyle(row,index)
+{
+	var style = {};             
+                  
+	if(index%2==0)
+	{
+		style={css:{'background': '#F7F7F7'}};
+	}
+	else
+	{
+		style={css:{'background': '#FFFFFF'}};
+	}
+	return style;
 }

@@ -1,0 +1,221 @@
+<html>
+<head>
+	<link rel="icon" type="image/x-icon" href="resources/icons/favicon.ico">
+	<link href="resources/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+	<link href="resources/css/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+	<link href="resources/css/bootstrap/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="resources/css/assets/assets.css" rel="stylesheet">
+	<style>
+		.goods_detail_2{
+			padding-top:50px;
+		}
+	</style>
+</head>
+<body>
+	<script src="resources/js/jquery/jquery-1.11.3.min.js"></script>
+	<script src="resources/js/bootstrap/bootstrap.min.js"></script>
+	<script src="resources/js/bootstrap-table/bootstrap-table.min.js"></script>
+	<script src="resources/js/assets/assets.js"></script>
+	<script>
+		$().ready(function(){
+				var classParam = getUrlParam("class");
+				var drugname = getUrlParam("drugname");
+				var pagesize = 2;
+				var drugList = getDrugsList(classParam);
+				var page = getUrlParam("page");
+				var intpage = 1;
+				if(page)
+				{
+					intpage =Number(page);
+				}
+				if(intpage<=1)
+				{
+					intpage = 1;
+				}
+				var drugListElem = $("#drugList");
+				if(classParam&&drugList&&drugListElem)
+				{
+					
+					var elems ="";
+					
+					var drugDetail = getDrugsDetail(classParam,drugname);
+					//规格型号
+					var spec = drugDetail['spec'];
+					if(!spec)
+					{
+						spec="暂无";
+					}
+					//适应症
+					var indication = drugDetail['indication'];
+					if(!indication)
+					{
+						indication="暂无";
+					}
+					//生产厂家
+					var manufacturers = drugDetail['manufacturers'];
+					var manufacturer ;
+					if(manufacturers)
+					{
+						var idx = Math.floor(Math.random()*manufacturers.length);
+						manufacturer = manufacturers[idx];
+					}
+					var usage=drugDetail['usage'];
+					if(!usage)
+					{
+						usage="暂无";
+					}
+					image = drugDetail['image'];
+					if(!image)
+					{
+						image = "default.jpg";
+					}
+					var elem = '<div class="media">'+
+						 '<a href="details.html?class='+classParam+'&drugname='+drugname+'&manufacturer='+manufacturer+'" class="pull-left"><img src="resources/images/'+image+'" height="200" width="200" class="media-object" alt="" /></a>'+
+						'<div class="media-body">'+
+							'<div class="col-md-12">'+
+								'<h4 class="media-heading col-md-6">'+drugname+'&nbsp;&nbsp;&nbsp;&nbsp;'+spec+'</h4>'+ 
+							'</div>'+
+							'<div class="col-md-12">'+
+							'<p>功能主治:'+indication+'</p>'+
+							'<p>用法用量:'+usage+'</p>'+
+							'<p>生产厂家:'+manufacturer+'</p>'+
+							'</div>'+
+						'</div>'+
+					'</div>'+
+					'<img width="100%" style="padding-bottom:10px;padding-top:10px" alt="140x140" src="resources/images/split.png" />';
+					elems=elems+elem;
+					drugListElem.html(elems);
+				}
+			}
+		)
+	</script>
+	<script>
+		 $(function () {
+		 //初始化界面查询条件相关
+		 reloadData();
+
+		});
+		function reloadData(){
+			 //1.初始化Table
+			 var oTable = Init();
+		}
+
+
+		 //初始化Table
+		function  Init()  {
+			 $('#tb_customer').bootstrapTable({
+				 striped: true,                      //是否显示行间隔色
+				 cache: false,                       //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
+				 uniqueId: "name",                     //每一行的唯一标识，一般为主键列
+				 showHeader:false,
+				 undefinedText:" ",
+				 showToggle:false,                    //是否显示详细视图和列表视图的切换按钮
+				 cardView: false,                    //是否显示详细视图
+				 detailView: false,                   //是否显示父子表onEditableSave
+				 data:[
+				 {"name":"【商品名称】","value":"汤臣倍健维生素C片"},
+				 {"name":"【商品名称】","value":"汤臣倍健维生素C片"},
+				 {"name":"【商品名称】","value":"汤臣倍健维生素C片"},
+				 {"name":"【商品名称】","value":"汤臣倍健维生素C片"},
+				 {"name":"【商品名称】","value":"汤臣倍健维生素C片"},
+				 {"name":"【商品名称】","value":"汤臣倍健维生素C片"},
+				 {"name":"【商品名称】","value":"汤臣倍健维生素C片"},
+				 {"name":"【商品名称】","value":"汤臣倍健维生素C片"},
+				 {"name":"【生产企业】","value":"汤臣倍健股份有限公司"}
+				 ],
+				 rowStyle:setRowStyle,
+				 columns: [{
+					 field: 'name',
+					 title: '菜单id',
+					 width:'25%'
+					 
+				 }, {
+					 field: 'value',
+					 title: '权限',
+					 width:'75%'
+				  
+				 }
+				 ]
+			 });
+		 };
+	</script>
+	<div class="container">
+		<div class="row clearfix">
+			<div class="col-md-12 column">
+				<div class="col-md-6 column" style="padding-top:46px">
+					<img alt="140x140" width="50%" src="resources/images/bigLogo.png" />
+				</div>
+				<div class="col-md-6 column" align="right">
+					<div class="btn-group" style="padding-top:44px">
+					 <button id="yunyaofang" class="btn btn-link" type="button"><span class="menu_span">云药房</span></button> 
+					 <button id="feichufang" class="btn btn-link" type="button" onclick="clickHeadButton('class2')"><span class="menu_span">非处方药</span></button> 
+					 <button id="baojianpin" class="btn btn-link" type="button" onclick="clickHeadButton('class3')"><span class="menu_span">保健品</span></button> 
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row clearfix">
+			<div class="col-md-12 column">
+				<div class="col-md-5 column" style="padding-top:46px">
+					<img alt="140x140" width="100%" src="resources/images/非方药2.jpg" />
+				</div>
+				<div class="col-md-7 column goods_detail_2">
+					<h2>汤臣倍健维生素C片 600mg*30片</h2>
+					<h3>保健功能：</h3>
+					<p>补充维生素C</p>
+					<h3>用法用量：</h3>
+					<p>每日1次，每次1片</p>
+					<h3>生产厂家：</h3>
+					<p>广州市佰健生物工程有限公司</p>
+				</div>
+			</div>
+		</div>
+		<div class="row clearfix">
+			<div class="col-md-12 column">
+				<h3>药品说明书</h3>
+			</div>
+		</div>
+		<div class="row clearfix">
+			<div class="col-md-12 column" style="padding-top:20px;">
+				<img width="100%" alt="140x140" src="resources/images/split.png" />
+			</div>
+		</div>
+		<div class="row clearfix">
+			<div class="col-md-12 column goods_detail_div goods_detail_span">
+				温馨提示：部分商品说明书更换频繁，请以商品实物为准。请仔细阅读产品说明书并按照说明使用或在医生与药师指导下购买和使用。
+			</div>
+		</div>
+		<div class="row clearfix">
+			<div class="col-md-12 column goods_detail_div">
+				<div class="col-md-5 column" style="padding-top:46px">
+					<p>【商品名称】汤臣倍健维生素C片</p>
+					<p>【生产企业】汤臣倍健股份有限公司</p>
+					<p>【批准文号】国食健字G20050179</p>
+				</div>
+				<div class="col-md-7 column" style="padding-top:46px">
+					<p>【规　　格】600mg*30片</p>
+					<p>【有&nbsp;&nbsp;效&nbsp;&nbsp;期】24个月</p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row clearfix">
+			<div class="col-md-12 column goods_detail_div">
+			<table id="tb_customer">
+			</table>
+			</div>
+		</div>
+		
+		<div class="row clearfix" >
+			<div class="col-md-12 column split" >
+				<img width="100%" alt="140x140" src="resources/images/split.png" />
+			</div>
+		</div>
+		<div class="row clearfix" >
+			<div class="col-md-12 column footer" align="center">
+				© 2007 - 2018 东软熙康健康科技有限公司    |   京ICP证151058号
+			</div>
+		</div>
+	</div>
+</body>
+</html>
