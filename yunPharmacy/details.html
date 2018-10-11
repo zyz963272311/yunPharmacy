@@ -6,11 +6,6 @@
 	<link href="resources/css/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
 	<link href="resources/css/bootstrap/bootstrap-theme.min.css" rel="stylesheet">
 	<link href="resources/css/assets/assets.css" rel="stylesheet">
-	<style>
-		.goods_detail_2{
-			padding-top:50px;
-		}
-	</style>
 </head>
 <body>
 	<script src="resources/js/jquery/jquery-1.11.3.min.js"></script>
@@ -147,32 +142,33 @@
 					<img alt="140x140" width="50%" src="resources/images/bigLogo.png" />
 				</div>
 				<div class="col-md-6 column" align="right">
-					<div class="btn-group" style="padding-top:44px">
+					<div class=" btn_menu" style="padding-top:44px">
 					 <button id="yunyaofang" class="btn btn-link" type="button"><span class="menu_span">云药房</span></button> 
 					 <button id="feichufang" class="btn btn-link" type="button" onclick="clickHeadButton('class2')"><span class="menu_span">非处方药</span></button> 
+					 |
 					 <button id="baojianpin" class="btn btn-link" type="button" onclick="clickHeadButton('class3')"><span class="menu_span">保健品</span></button> 
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="row clearfix">
-			<div class="col-md-12 column">
-				<div class="col-md-5 column" style="padding-top:46px">
+			<div class="col-md-12 column detail_goods_div" >
+				<div class="col-md-3 column detail_goods_image" style="">
 					<img alt="140x140" width="100%" src="resources/images/非方药2.jpg" />
 				</div>
-				<div class="col-md-7 column goods_detail_2">
-					<h2>汤臣倍健维生素C片 600mg*30片</h2>
-					<h3>保健功能：</h3>
-					<p>补充维生素C</p>
-					<h3>用法用量：</h3>
-					<p>每日1次，每次1片</p>
-					<h3>生产厂家：</h3>
-					<p>广州市佰健生物工程有限公司</p>
+				<div class="col-md-9 column goods_detail_2">
+					<div class="hover detail_goods_title"><h2 >汤臣倍健维生素C片 600mg*30片</h2></div>
+					<div class="hover detail_goods_name"><span >保健功能：</span></div>
+					<div class="hover detail_goods_val"><span >补充维生素C</span></div>
+					<div class="hover detail_goods_name"><span >用法用量：</span></div>
+					<div class="hover detail_goods_val"><span >每日1次，每次1片</span></div>
+					<div class="hover detail_goods_name"><span >生产厂家：</span></div>
+					<div class="hover detail_goods_val"><span >广州市佰健生物工程有限公司</span></div>
 				</div>
 			</div>
 		</div>
 		<div class="row clearfix">
-			<div class="col-md-12 column">
+			<div class="col-md-12 column detail_goods_sms hover">
 				<h3>药品说明书</h3>
 			</div>
 		</div>
@@ -182,27 +178,27 @@
 			</div>
 		</div>
 		<div class="row clearfix">
-			<div class="col-md-12 column goods_detail_div goods_detail_span">
-				温馨提示：部分商品说明书更换频繁，请以商品实物为准。请仔细阅读产品说明书并按照说明使用或在医生与药师指导下购买和使用。
+			<div class="col-md-12 column detail_goods_ts hover">
+				温馨提示：<br/>				部分商品说明书更换频繁，请以商品实物为准。请仔细阅读产品说明书并按照说明使用或在医生与药师指导下购买和使用。
 			</div>
 		</div>
 		<div class="row clearfix">
 			<div class="col-md-12 column goods_detail_div">
-				<div class="col-md-5 column" style="padding-top:46px">
-					<p>【商品名称】汤臣倍健维生素C片</p>
-					<p>【生产企业】汤臣倍健股份有限公司</p>
-					<p>【批准文号】国食健字G20050179</p>
+				<div class="col-md-5 column " style="padding-top:46px">
+					<div class="hover detail_goods_bas"><p >【商品名称】汤臣倍健维生素C片</p></div>
+					<div class="hover detail_goods_bas"><p >【生产企业】汤臣倍健股份有限公司</p></div>
+					<div class="hover detail_goods_bas"><p>【批准文号】国食健字G20050179</p></div>
 				</div>
 				<div class="col-md-7 column" style="padding-top:46px">
-					<p>【规　　格】600mg*30片</p>
-					<p>【有&nbsp;&nbsp;效&nbsp;&nbsp;期】24个月</p>
+					<div class="hover detail_goods_bas"><p>【规　　格】600mg*30片</p></div>
+					<div class="hover detail_goods_bas"><p>【有&nbsp;&nbsp;效&nbsp;&nbsp;期】24个月</p></div>
 				</div>
 			</div>
 		</div>
 		
 		<div class="row clearfix">
 			<div class="col-md-12 column goods_detail_div">
-			<table id="tb_customer">
+			<table id="tb_customer" >
 			</table>
 			</div>
 		</div>
@@ -212,8 +208,8 @@
 				<img width="100%" alt="140x140" src="resources/images/split.png" />
 			</div>
 		</div>
-		<div class="row clearfix" >
-			<div class="col-md-12 column footer" align="center">
+			<div class="row clearfix">
+			<div class="col-md-12 column hover" style="padding-top:20px;padding-bottom:60px" align="center">
 				© 2007 - 2018 东软熙康健康科技有限公司    |   京ICP证151058号
 			</div>
 		</div>

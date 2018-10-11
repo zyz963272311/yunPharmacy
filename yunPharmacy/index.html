@@ -9,6 +9,9 @@
 		.goods{
 			height:300px;
 		}
+		.thumbnail{
+			border: 0px solid #ddd;
+		}
 	</style>
 </head>
 <body>
@@ -22,9 +25,10 @@
 					<img alt="140x140" width="50%" src="resources/images/bigLogo.png" />
 				</div>
 				<div class="col-md-6 column" align="right">
-					<div class="btn-group" style="padding-top:44px">
+					<div class=" btn_menu" style="padding-top:44px">
 					 <button id="yunyaofang" class="btn btn-link" type="button"><span class="menu_span">云药房</span></button> 
 					 <button id="feichufang" class="btn btn-link" type="button" onclick="clickHeadButton('class2')"><span class="menu_span">非处方药</span></button> 
+					  |
 					 <button id="baojianpin" class="btn btn-link" type="button" onclick="clickHeadButton('class3')"><span class="menu_span">保健品</span></button> 
 					</div>
 				</div>
@@ -35,216 +39,136 @@
 				<div class="carousel slide" id="carousel-738097" align="center">
 					<div class="carousel-inner">
 						<div class="item active">
-							<img alt="" width="100%" src="resources/images/banner.jpg" />
+							<img alt="" width="97%" src="resources/images/banner.png" />
 						</div>
 					</div> 
 				</div>
 			</div>
 		</div>
-		<!--
-		<div class="row clearfix">
-			<div class="col-md-12 column" >
-				<h2>
-					今日药房优品
-				</h2>
-				<p>
-					一款能够装进口袋 并随身携带的药房
-				</p>
-			</div>
-		</div>
-		-->
-		<!--
-		<div class="row clearfix">
-			<div class="col-md-12 column">
-				<div class="panel panel-default">
-					<div class="panel-heading" style="height:39px">
-						<h3 class="panel-title">
-							<span class="col-md-10">
-								处方药
-							</span>
-							<a class="btn col-md-2" href="classification.html?class=class1" >更多</a>
-						</h3>
-					</div>
-					<div class="panel-body">
-						<div class="row">
-							<div class="col-md-4">
-								<div class="thumbnail">
-									<img alt="300x200" class="goods" style="height:300px;"  src="resources/images/处方药1.jpg" />
-									<div class="caption">
-										<h3>
-											硝苯地平控释片
-										</h3>
-										<p>
-											降压控压
-										</p>
-										
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="thumbnail">
-									<img alt="300x200" class="goods" style="height:300px;"  src="resources/images/处方药2.jpg" />
-									<div class="caption">
-										<h3>
-											马来酸阿法替尼片
-										</h3>
-										<p>
-											血栓 通络
-										</p>
-										
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="thumbnail">
-									<img alt="300x200" class="goods" style="height:300px;" src="resources/images/处方药3.jpg" />
-									<div class="caption">
-										<h3>
-											阿莫西林
-										</h3>
-										<p>
-											病毒性 消炎
-										</p>
-										
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-				</div>
-			</div>
-		</div>
-		-->
 		<div class="row clearfix" style="padding-top:20px">
 			<div class="col-md-12 column">
-				<div class="panel panel-default">
-					<div class="panel-heading" style="height:39px">
-						<h3 class="panel-title">
-							<span class="col-md-10">
-								非处方药
-							</span>
-							<a class="btn col-md-2" href="classification.html?class=class2" >查看更多</a>
-						</h3>
-					</div>
-					<div class="panel-body">
-						<div class="row">
-							<div class="col-md-4">
-								<div class="thumbnail">
-									<img alt="300x200" class="goods" style="height:300px;"  src="resources/images/非方药1.jpg" />
-									<div class="caption">
-										<h3>
-											复方甘草片
-										</h3>
-										<p>
-											化痰止咳
-										</p>
-										
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="thumbnail">
-									<img alt="300x200" class="goods" style="height:300px;"  src="resources/images/非方药2.jpg" />
-									<div class="caption">
-										<h3>
-											红霉素软膏
-										</h3>
-										<p>
-											消炎 清淤
-										</p>
-										
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="thumbnail">
-									<img alt="300x200" class="goods" style="height:300px;"  src="resources/images/非方药3.jpg" />
-									<div class="caption">
-										<h3>
-											斯达舒胶囊
-										</h3>
-										<p>
-											胃痛 胃痉挛
-										</p>
-										
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					
+				<div class="col-md-6 column hover">
+					<h3>非处方药</h3>
+				</div>
+				<div class="col-md-6 column " align="right">
+					<a class="btn seemore" href="classification.html?class=class2" >查看更多</a>
 				</div>
 			</div>
 		</div>
-		<div class="row clearfix">
+		<div class="row clearfix" style="padding-top:20px">
 			<div class="col-md-12 column">
-				<div class="panel panel-default">
-					<div class="panel-heading" style="height:39px">
-						<h3 class="panel-title">
-							<span class="col-md-10">
-								保健品
-							</span>
-							<a class="btn col-md-2" href="classification.html?class=class3" >查看更多</a>
-						</h3>
-					</div>
-					<div class="panel-body">
-						<div class="row">
-							<div class="col-md-4">
-								<div class="thumbnail">
-									<img alt="300x200" style="height:300px;"  class="goods" src="resources/images/保健品1.jpg" />
-									<div class="caption">
-										<h3>
-											骨维素片
-										</h3>
-										<p>
-											刺激软骨细胞生长
-										</p>
-										
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="thumbnail">
-									<img alt="300x200" class="goods" style="height:300px;"  src="resources/images/保健品2.jpg" />
-									<div class="caption">
-										<h3>
-											蔓越莓胶囊
-										</h3>
-										<p>
-											抗菌 美颜
-										</p>
-										
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="thumbnail">
-									<img alt="300x200" class="goods" style="height:300px;"  src="resources/images/保健品3.jpg" />
-									<div class="caption">
-										<h3>
-											鱼肝油胶囊
-										</h3>
-										<p>
-											补充维生素A/D
-										</p>
-										
-									</div>
-								</div>
-							</div>
+				<div class="col-md-4">
+					<div class="thumbnail">
+						<img alt="300x200" class="goods" style="height:300px;"  src="resources/images/非方药1.jpg" />
+						<div class="caption">
+							<h3 class="hover idx_goods_name">
+								复方甘草片
+							</h3>
+							<p class="hover idx_goods_indicat">
+								化痰止咳
+							</p>
+							
 						</div>
 					</div>
-					
+				</div>
+				<div class="col-md-4">
+					<div class="thumbnail">
+						<img alt="300x200" class="goods" style="height:300px;"  src="resources/images/非方药2.jpg" />
+						<div class="caption">
+							<h3 class="hover idx_goods_name">
+								红霉素软膏
+							</h3>
+							<p class="hover idx_goods_indicat">
+								消炎 清淤
+							</p>
+							
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="thumbnail">
+						<img alt="300x200" class="goods" style="height:300px;"  src="resources/images/非方药3.jpg" />
+						<div class="caption">
+							<h3 class="hover idx_goods_name">
+								斯达舒胶囊
+							</h3>
+							<p class="hover idx_goods_indicat">
+								胃痛 胃痉挛
+							</p>
+							
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
-		<div class="row clearfix">
-			<div class="col-md-12 column" style="padding-top:20px;">
-				<img width="100%" alt="140x140" src="resources/images/split.png" />
+		<div class="row clearfix" >
+			<div class="col-md-12 column split" align="center">
+				<img class="split_image" alt="140x140" src="resources/images/split.png" />
+			</div>
+		</div>
+		<div class="row clearfix" style="padding-top:20px">
+			<div class="col-md-12 column">
+				<div class="col-md-6 column hover">
+					<h3>保健品</h3>
+				</div>
+				<div class="col-md-6 column " align="right">
+					<a class="btn seemore" href="classification.html?class=class2" >查看更多</a>
+				</div>
+			</div>
+		</div>
+		<div class="row clearfix" style="padding-top:20px">
+			<div class="col-md-12 column">
+				<div class="col-md-4">
+					<div class="thumbnail">
+						<img alt="300x200" class="goods" style="height:300px;"  src="resources/images/保健品1.jpg" />
+						<div class="caption">
+							<h3 class="hover idx_goods_name">
+								复方甘草片
+							</h3>
+							<p class="hover idx_goods_indicat">
+								化痰止咳
+							</p>
+							
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="thumbnail">
+						<img alt="300x200" class="goods" style="height:300px;"  src="resources/images/保健品2.jpg" />
+						<div class="caption">
+							<h3 class="hover idx_goods_name">
+								红霉素软膏
+							</h3>
+							<p class="hover idx_goods_indicat">
+								消炎 清淤
+							</p>
+							
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="thumbnail">
+						<img alt="300x200" class="goods" style="height:300px;"  src="resources/images/保健品3.jpg" />
+						<div class="caption">
+							<h3 class="hover idx_goods_name">
+								斯达舒胶囊
+							</h3>
+							<p class="hover idx_goods_indicat">
+								胃痛 胃痉挛
+							</p>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row clearfix" >
+			<div class="col-md-12 column split" align="center">
+				<img class="split_image" alt="140x140" src="resources/images/split.png" />
 			</div>
 		</div>
 		<div class="row clearfix">
-			<div class="col-md-12 column" style="padding-top:20px;padding-bottom:60px" align="center">
+			<div class="col-md-12 column hover" style="padding-top:20px;padding-bottom:60px" align="center">
 				© 2007 - 2018 东软熙康健康科技有限公司    |   京ICP证151058号
 			</div>
 		</div>

@@ -132,20 +132,20 @@
 						{
 							image = "default.jpg";
 						}
-						var elem = '<div class="media">'+
-							 '<a href="details.html?class='+classParam+'&drugname='+drugname+'&manufacturer='+manufacturer+'" class="pull-left"><img src="resources/images/'+image+'" height="200" width="200" class="media-object" alt="" /></a>'+
+						var elem = 
+						'<div class="row clearfix" ><div class="col-md-12 column split" align="center"><img class="split_image" style="padding-bottom:10px;padding-top:10px" alt="140x140" src="resources/images/split.png" /></div></div>'+'<div class="media">'+
+							 '<a href="details.html?class='+classParam+'&drugname='+drugname+'&manufacturer='+manufacturer+'" class="pull-left"><img src="resources/images/'+image+'" height="200" width="200" class="media-object class_image" alt="" /></a>'+
 							'<div class="media-body">'+
 								'<div class="col-md-12">'+
-									'<h4 class="media-heading col-md-6">'+drugname+'&nbsp;&nbsp;&nbsp;&nbsp;'+spec+'</h4>'+ 
+									'<h4 class="media-heading col-md-6 hover class_goods_title">'+drugname+'&nbsp;&nbsp;&nbsp;&nbsp;'+spec+'</h4>'+ 
 								'</div>'+
 								'<div class="col-md-12">'+
-								'<p>功能主治:'+indication+'</p>'+
-								'<p>用法用量:'+usage+'</p>'+
-								'<p>生产厂家:'+manufacturer+'</p>'+
+								'<div class="class_goods_div"><p class="hover class_goods_name">保健功能:</p></div><div class="class_goods_div"><span class="hover class_goods_val">'+indication+'</span></div><div class="class_goods_div">'+
+								'<p class="hover class_goods_name">用法用量:</p></div><div class="class_goods_div"><span class="hover class_goods_val">'+usage+'</span></div><div class="class_goods_div">'+
+								'<p class="hover class_goods_name">生产厂家:</p></div><div class="class_goods_div"><span class="hover class_goods_val">'+manufacturer+'</span></div>'+
 								'</div>'+
 							'</div>'+
-						'</div>'+
-						'<img width="100%" style="padding-bottom:10px;padding-top:10px" alt="140x140" src="resources/images/split.png" />';
+						'</div >';
 						elems=elems+elem;
 					}
 					drugListElem.html(elems);
@@ -157,55 +157,56 @@
 			}
 		)
 	</script>
-	<div class="container">
-		<div class="row clearfix">
-			<div class="col-md-12 column">
-				<div class="col-md-6 column" style="padding-top:46px">
-					<img alt="140x140" width="50%" src="resources/images/bigLogo.png" />
-				</div>
-				<div class="col-md-6 column" align="right">
-					<div class="btn-group" style="padding-top:44px">
-					 <button id="yunyaofang" class="btn btn-link" type="button"><span class="menu_span">云药房</span></button> 
-					 <button id="feichufang" class="btn btn-link" type="button" onclick="clickHeadButton('class2')"><span class="menu_span">非处方药</span></button> 
-					 <button id="baojianpin" class="btn btn-link" type="button" onclick="clickHeadButton('class3')"><span class="menu_span">保健品</span></button> 
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col-md-12 column">
+					<div class="col-md-6 column" style="padding-top:46px">
+						<img alt="140x140" width="50%" src="resources/images/bigLogo.png" />
+					</div>
+					<div class="col-md-6 column" align="right">
+						<div class=" btn_menu" style="padding-top:44px">
+						 <button id="yunyaofang" class="btn btn-link" type="button"><span class="menu_span">云药房</span></button> 
+						 <button id="feichufang" class="btn btn-link" type="button" onclick="clickHeadButton('class2')"><span class="menu_span">非处方药</span></button> 
+						 |
+						 <button id="baojianpin" class="btn btn-link" type="button" onclick="clickHeadButton('class3')"><span class="menu_span">保健品</span></button> 
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="row clearfix">
-			<div class="col-md-12 column">
-				<div class="carousel slide" id="carousel-738097" align="center">
-					<div class="carousel-inner">
-						<div class="item active">
-							<img alt="" width="100%" src="resources/images/banner.jpg" />
-						</div>
-					</div> 
+			<div class="row clearfix">
+				<div class="col-md-12 column">
+					<div class="carousel slide" id="carousel-738097" align="center">
+						<div class="carousel-inner">
+							<div class="item active">
+								<img alt="" width="97%" src="resources/images/banner.png" />
+							</div>
+						</div> 
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="row clearfix" style="padding-top:30px">
-			<div class="col-md-12 column">
-				<h3>非处方药</h3>
+			<div class="row clearfix" style="padding-top:30px">
+				<div class="col-md-12 column ">
+					<h3 class="class_name hover">非处方药</h3>
+				</div>
 			</div>
-		</div>
-		<div class="row clearfix">
-			<div class="col-md-12 column" id="drugList">
-				
+			<div class="row clearfix">
+				<div class="col-md-12 column" id="drugList">
+					
+				</div>
 			</div>
-		</div>
-		<div class="row clearfix">
-		<div class="col-md-12 column" align="right">
-			<ul class="pagination" id = "pagination">
-			</ul>
-		</div>
-	</div>
-		<div class="row clearfix" >
-			<div class="col-md-12 column split" >
-				<img width="100%" alt="140x140" src="resources/images/split.png" />
+			<div class="row clearfix">
+			<div class="col-md-12 column" align="right">
+				<ul class="pagination" id = "pagination">
+				</ul>
 			</div>
 		</div>
 		<div class="row clearfix" >
-			<div class="col-md-12 column footer" align="center">
+			<div class="col-md-12 column split" align="center">
+				<img class="split_image" alt="140x140" src="resources/images/split.png" />
+			</div>
+		</div>
+		<div class="row clearfix">
+			<div class="col-md-12 column hover" style="padding-top:20px;padding-bottom:60px" align="center">
 				© 2007 - 2018 东软熙康健康科技有限公司    |   京ICP证151058号
 			</div>
 		</div>
